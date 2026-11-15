@@ -1,0 +1,1493 @@
+{
+  "id": "2aadcc7a-4e59-4a3d-9a3e-79b81101a588",
+  "revision": 0,
+  "last_node_id": 100,
+  "last_link_id": 23,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        160
+      ],
+      "size": [
+        280,
+        420
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "title": "LoadImage",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "Node name for S&R": "LoadImage",
+        "guhaiImageValue": "female-reference.png"
+      },
+      "widgets_values": [
+        "female-reference.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "female-reference.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 13,
+      "type": "SaveImage",
+      "pos": [
+        1800,
+        160
+      ],
+      "size": [
+        1000,
+        650
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "title": "保存角色设定图",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "SkyHowl-Sheet/character-sheet"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "SkyHowl-Sheet-V4/dugu-single-seed-control"
+      }
+    },
+    {
+      "id": 20,
+      "type": "SkyHowlCharacterSheetPanels",
+      "pos": [
+        340,
+        160
+      ],
+      "size": [
+        720,
+        1030
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "character_image",
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "name": "reference_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "reference_image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "reference_image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "qwen_prompt",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            21
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "image_4",
+          "type": "IMAGE",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "image_5",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "sheet_spec",
+          "type": "STRING",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SkyHowlCharacterSheetPanels"
+      },
+      "widgets_values": [
+        "{\"hand_state\": \"reference\", \"clothing_mode\": \"garment\", \"clothing_type\": \"reference\", \"footwear_state\": \"reference\", \"schema_version\": 3, \"views\": [\"face_front\", \"face_left\", \"body_front\", \"body_left\", \"body_back\"], \"size\": {\"mode\": \"auto\", \"body_height\": 1120, \"manual_width\": 3168, \"manual_height\": 1280}, \"part_prompts\": {}, \"reference_roles\": {\"reference_image_1\": \"same_character\", \"reference_image_2\": \"same_character\", \"reference_image_3\": \"same_character\"}, \"background\": \"gray\"}",
+        "none"
+      ],
+      "widgets_values_named": {
+        "state_json": "{\"hand_state\":\"reference\",\"clothing_mode\":\"garment\",\"clothing_type\":\"reference\",\"footwear_state\":\"reference\",\"schema_version\":3,\"views\":[\"face_front\",\"face_left\",\"body_front\",\"body_left\",\"body_back\"],\"size\":{\"mode\":\"auto\",\"body_height\":1120,\"manual_width\":3168,\"manual_height\":1280},\"part_prompts\":{},\"reference_roles\":{\"reference_image_1\":\"same_character\",\"reference_image_2\":\"same_character\",\"reference_image_3\":\"same_character\"}}",
+        "style": "none"
+      },
+      "title": "SkyHowl · 角色设定 · 逐视图"
+    },
+    {
+      "id": 100,
+      "type": "d7cd8e60-e637-4624-9289-a07b7249bb44",
+      "pos": [
+        1200,
+        160
+      ],
+      "size": [
+        500,
+        470
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "qwen_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "qwen_prompt"
+          },
+          "link": 2
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 21
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 22
+        },
+        {
+          "name": "image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 4
+        },
+        {
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "name": "sheet_spec",
+          "type": "STRING",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "qwen_image_2.1_vae_bf16.safetensors",
+        2026111301
+      ],
+      "widgets_values_named": {
+        "qwen_prompt": "",
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+        "noise_seed": 2026111301,
+        "control_after_generate": "fixed"
+      },
+      "title": "Qwen Image 2.1 · 逐视图 8步 / 拼版"
+    }
+  ],
+  "links": [
+    [
+      2,
+      20,
+      0,
+      100,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      20,
+      3,
+      100,
+      3,
+      "IMAGE"
+    ],
+    [
+      5,
+      20,
+      4,
+      100,
+      4,
+      "IMAGE"
+    ],
+    [
+      6,
+      20,
+      5,
+      100,
+      5,
+      "IMAGE"
+    ],
+    [
+      7,
+      20,
+      6,
+      100,
+      6,
+      "IMAGE"
+    ],
+    [
+      8,
+      20,
+      7,
+      100,
+      7,
+      "IMAGE"
+    ],
+    [
+      18,
+      100,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      5,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      20,
+      1,
+      100,
+      1,
+      "INT"
+    ],
+    [
+      22,
+      20,
+      2,
+      100,
+      2,
+      "INT"
+    ],
+    [
+      23,
+      20,
+      8,
+      100,
+      8,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "d7cd8e60-e637-4624-9289-a07b7249bb44",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 100,
+          "lastLinkId": 38,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Qwen Image 2.1 · 逐视图 8步 / 拼版",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -80,
+            80,
+            210,
+            480
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3060,
+            100,
+            160,
+            100
+          ]
+        },
+        "inputs": [
+          {
+            "id": "b910aa15-54e2-49f4-b426-96c5005a0094",
+            "name": "qwen_prompt",
+            "type": "STRING",
+            "linkIds": [
+              28
+            ],
+            "pos": [
+              20,
+              100
+            ]
+          },
+          {
+            "id": "972e187e-ff65-402e-8164-0d0902d1e059",
+            "name": "width",
+            "type": "INT",
+            "linkIds": [
+              35
+            ],
+            "pos": [
+              20,
+              126
+            ]
+          },
+          {
+            "id": "298079db-15a5-44f7-946a-cb6349b2ba07",
+            "name": "height",
+            "type": "INT",
+            "linkIds": [
+              36
+            ],
+            "pos": [
+              20,
+              152
+            ]
+          },
+          {
+            "id": "d456b321-2956-4ca0-b388-c0844c24729b",
+            "name": "image_1",
+            "type": "IMAGE",
+            "linkIds": [
+              29
+            ],
+            "pos": [
+              20,
+              178
+            ]
+          },
+          {
+            "id": "01147809-96dc-4048-89c6-c60a1a5d458c",
+            "name": "image_2",
+            "type": "IMAGE",
+            "linkIds": [
+              30
+            ],
+            "pos": [
+              20,
+              204
+            ]
+          },
+          {
+            "id": "1b8476fb-6673-4bf4-b417-50001eca4296",
+            "name": "image_3",
+            "type": "IMAGE",
+            "linkIds": [
+              31
+            ],
+            "pos": [
+              20,
+              230
+            ]
+          },
+          {
+            "id": "6533f892-1400-4696-b487-2cabaa1b5b03",
+            "name": "image_4",
+            "type": "IMAGE",
+            "linkIds": [
+              32
+            ],
+            "pos": [
+              20,
+              256
+            ]
+          },
+          {
+            "id": "868e7c1c-f987-4164-a740-7a5d47341680",
+            "name": "image_5",
+            "type": "IMAGE",
+            "linkIds": [
+              33
+            ],
+            "pos": [
+              20,
+              282
+            ]
+          },
+          {
+            "id": "3ea2ad46-b527-4714-9e89-4bb32b2fa75f",
+            "name": "sheet_spec",
+            "type": "STRING",
+            "linkIds": [
+              38
+            ],
+            "pos": [
+              20,
+              308
+            ]
+          },
+          {
+            "id": "cb6b7f75-0cbd-477c-aa1a-9f2ce01a512d",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              23
+            ],
+            "pos": [
+              20,
+              334
+            ]
+          },
+          {
+            "id": "8977ef1a-639f-4ce7-897b-5163a4f6648e",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              24
+            ],
+            "pos": [
+              20,
+              360
+            ]
+          },
+          {
+            "id": "94df1b23-3d43-4877-a135-c8153417e32d",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              25
+            ],
+            "pos": [
+              20,
+              386
+            ]
+          },
+          {
+            "id": "230e3bea-3215-46a7-8fad-4cf6a4342794",
+            "name": "noise_seed",
+            "type": "INT",
+            "linkIds": [
+              26
+            ],
+            "pos": [
+              20,
+              412
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "06c18541-678c-4fba-869c-9abdd250f8be",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              34
+            ],
+            "pos": [
+              3400,
+              100
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 1,
+            "type": "UNETLoader",
+            "pos": [
+              300,
+              100
+            ],
+            "size": [
+              350,
+              110
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "UNet名称",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 23
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "模型",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  9
+                ]
+              }
+            ],
+            "title": "UNETLoader",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "UNETLoader",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "qwen_image_2.1_turbo_int8_convrot.safetensors",
+              "default"
+            ],
+            "widgets_values_named": {
+              "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          {
+            "id": 2,
+            "type": "CLIPLoader",
+            "pos": [
+              300,
+              280
+            ],
+            "size": [
+              350,
+              135
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "CLIP名称",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 24
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  1
+                ]
+              }
+            ],
+            "title": "CLIPLoader",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "CLIPLoader",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "qwen3vl_8b_int8_convrot.safetensors",
+              "qwen_image",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+              "type": "qwen_image",
+              "device": "default"
+            }
+          },
+          {
+            "id": 3,
+            "type": "VAELoader",
+            "pos": [
+              300,
+              500
+            ],
+            "size": [
+              350,
+              85
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae名称",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 25
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  3,
+                  17
+                ]
+              }
+            ],
+            "title": "VAELoader",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "VAELoader",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "qwen_image_2.1_vae_bf16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+            }
+          },
+          {
+            "id": 7,
+            "type": "TextEncodeQwenImage21",
+            "pos": [
+              1200,
+              100
+            ],
+            "size": [
+              390,
+              326
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 1
+              },
+              {
+                "localized_name": "image_1",
+                "name": "images.image_1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 29
+              },
+              {
+                "localized_name": "image_2",
+                "name": "images.image_2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 30
+              },
+              {
+                "localized_name": "image_3",
+                "name": "images.image_3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 31
+              },
+              {
+                "localized_name": "image_4",
+                "name": "images.image_4",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 32
+              },
+              {
+                "localized_name": "image_5",
+                "name": "images.image_5",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 33
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 3
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 28
+              },
+              {
+                "localized_name": "image_6",
+                "name": "images.image_6",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  11
+                ]
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "links": [
+                  12
+                ]
+              },
+              {
+                "localized_name": "latent",
+                "name": "latent",
+                "type": "LATENT",
+                "links": [
+                  20
+                ]
+              }
+            ],
+            "title": "原生 Qwen 2.1 多参考编码",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "TextEncodeQwenImage21"
+            },
+            "widgets_values": [
+              "",
+              "",
+              0
+            ],
+            "widgets_values_named": {
+              "prompt": "",
+              "negative_prompt": "",
+              "resolution": 0
+            }
+          },
+          {
+            "id": 8,
+            "type": "QwenImage21Cache",
+            "pos": [
+              750,
+              100
+            ],
+            "size": [
+              350,
+              105
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 9
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "模型",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  10
+                ]
+              }
+            ],
+            "title": "QwenImage21Cache",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "QwenImage21Cache",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "auto",
+              "default"
+            ],
+            "widgets_values_named": {
+              "device": "auto",
+              "dtype": "default"
+            }
+          },
+          {
+            "id": 9,
+            "type": "KSamplerSelect",
+            "pos": [
+              1200,
+              510
+            ],
+            "size": [
+              280,
+              85
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "采样器",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  13
+                ]
+              }
+            ],
+            "title": "KSamplerSelect",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "KSamplerSelect",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
+          },
+          {
+            "id": 10,
+            "type": "ManualSigmas",
+            "pos": [
+              1200,
+              660
+            ],
+            "size": [
+              280,
+              105
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "Sigmas",
+                "name": "SIGMAS",
+                "type": "SIGMAS",
+                "links": [
+                  14
+                ]
+              }
+            ],
+            "title": "ManualSigmas",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "ManualSigmas",
+              "skyhowl_auto_fit": true
+            },
+            "widgets_values": [
+              "1, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0"
+            ],
+            "widgets_values_named": {
+              "sigmas": "1, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0"
+            }
+          },
+          {
+            "id": 11,
+            "type": "SamplerCustom",
+            "pos": [
+              1700,
+              100
+            ],
+            "size": [
+              370,
+              240
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "模型",
+                "name": "model",
+                "type": "MODEL",
+                "link": 10
+              },
+              {
+                "localized_name": "正面条件",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 11
+              },
+              {
+                "localized_name": "负面条件",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 12
+              },
+              {
+                "localized_name": "采样器",
+                "name": "sampler",
+                "type": "SAMPLER",
+                "link": 13
+              },
+              {
+                "localized_name": "Sigmas",
+                "name": "sigmas",
+                "type": "SIGMAS",
+                "link": 14
+              },
+              {
+                "localized_name": "Latent",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 15
+              },
+              {
+                "localized_name": "噪波种子",
+                "name": "noise_seed",
+                "type": "INT",
+                "widget": {
+                  "name": "noise_seed"
+                },
+                "link": 26
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "Latent",
+                "name": "output",
+                "type": "LATENT",
+                "links": [
+                  16
+                ]
+              },
+              {
+                "localized_name": "降噪Latent",
+                "name": "denoised_output",
+                "type": "LATENT",
+                "links": []
+              }
+            ],
+            "title": "Turbo · Euler · CFG1 · 8步",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "SamplerCustom"
+            },
+            "widgets_values": [
+              true,
+              20261110,
+              "fixed",
+              1
+            ],
+            "widgets_values_named": {
+              "add_noise": true,
+              "noise_seed": 20261110,
+              "control_after_generate": "fixed",
+              "cfg": 1
+            }
+          },
+          {
+            "id": 12,
+            "type": "VAEDecode",
+            "pos": [
+              2150,
+              100
+            ],
+            "size": [
+              320,
+              100
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "Latent",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 16
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 17
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "图像",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  37
+                ]
+              }
+            ],
+            "title": "VAEDecode",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "Node name for S&R": "VAEDecode",
+              "skyhowl_auto_fit": true
+            }
+          },
+          {
+            "id": 22,
+            "type": "SkyHowlSheetCanvasV4",
+            "pos": [
+              750,
+              400
+            ],
+            "size": [
+              350,
+              180
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "latent",
+                "name": "latent",
+                "type": "LATENT",
+                "link": 20
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "link": 35
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "link": 36
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "canvas_latent",
+                "name": "canvas_latent",
+                "type": "LATENT",
+                "links": [
+                  15
+                ]
+              }
+            ],
+            "title": "Sheet宽高 → 64通道画布",
+            "properties": {
+              "Node name for S&R": "SkyHowlSheetCanvasV4"
+            }
+          },
+          {
+            "id": 40,
+            "type": "SkyHowlSheetCompose",
+            "title": "逐视图裁切居中 · 固定拼版",
+            "pos": [
+              2550,
+              100
+            ],
+            "size": [
+              380,
+              130
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "images",
+                "type": "IMAGE",
+                "link": 37
+              },
+              {
+                "name": "sheet_spec",
+                "type": "STRING",
+                "link": 38
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sheet_image",
+                "type": "IMAGE",
+                "links": [
+                  34
+                ]
+              },
+              {
+                "name": "composition_report",
+                "type": "STRING",
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "SkyHowlSheetCompose"
+            },
+            "widgets_values": [
+              false
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 9,
+            "origin_id": 1,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 10,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 11,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 12,
+            "origin_id": 7,
+            "origin_slot": 1,
+            "target_id": 11,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 13,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 3,
+            "type": "SAMPLER"
+          },
+          {
+            "id": 14,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 4,
+            "type": "SIGMAS"
+          },
+          {
+            "id": 15,
+            "origin_id": 22,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 5,
+            "type": "LATENT"
+          },
+          {
+            "id": 16,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 12,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 17,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 12,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 34,
+            "origin_id": 40,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 20,
+            "origin_id": 7,
+            "origin_slot": 2,
+            "target_id": 22,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 35,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 22,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 36,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 22,
+            "target_slot": 2,
+            "type": "INT"
+          },
+          {
+            "id": 23,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 1,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 24,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 2,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 25,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 3,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 29,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 7,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 30,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 7,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 31,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 7,
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 32,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 7,
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 33,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 7,
+            "target_slot": 5,
+            "type": "IMAGE"
+          },
+          {
+            "id": 3,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 6,
+            "type": "VAE"
+          },
+          {
+            "id": 28,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 7,
+            "type": "STRING"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 11,
+            "target_slot": 6,
+            "type": "INT"
+          },
+          {
+            "id": 37,
+            "origin_id": 12,
+            "origin_slot": 0,
+            "target_id": 40,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 38,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 40,
+            "target_slot": 1,
+            "type": "STRING"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7,
+      "offset": [
+        90,
+        220
+      ]
+    },
+    "frontendVersion": "1.58.5",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4,
+  "seed_widgets": {
+    "100": 4
+  }
+}

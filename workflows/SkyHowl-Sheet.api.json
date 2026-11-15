@@ -1,0 +1,252 @@
+{
+  "5": {
+    "inputs": {
+      "image": "female-reference.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "13": {
+    "inputs": {
+      "filename_prefix": "SkyHowl-Sheet/character-sheet",
+      "images": [
+        "100:40",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存完整角色设定图",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "20": {
+    "inputs": {
+      "state_json": "{\"hand_state\": \"reference\", \"clothing_mode\": \"garment\", \"clothing_type\": \"reference\", \"footwear_state\": \"reference\", \"schema_version\": 3, \"views\": [\"face_front\", \"face_left\", \"body_front\", \"body_left\", \"body_back\"], \"size\": {\"mode\": \"auto\", \"body_height\": 1120, \"manual_width\": 3168, \"manual_height\": 1280}, \"part_prompts\": {}, \"reference_roles\": {\"reference_image_1\": \"same_character\", \"reference_image_2\": \"same_character\", \"reference_image_3\": \"same_character\"}, \"background\": \"gray\"}",
+      "style": "none",
+      "character_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "SkyHowlCharacterSheetPanels",
+    "_meta": {
+      "title": "SkyHowl · 角色 Sheet V4"
+    }
+  },
+  "100:1": {
+    "inputs": {
+      "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNETLoader",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:2": {
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "CLIPLoader",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:3": {
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAELoader",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:7": {
+    "inputs": {
+      "prompt": [
+        "20",
+        0
+      ],
+      "negative_prompt": "",
+      "resolution": 0,
+      "clip": [
+        "100:2",
+        0
+      ],
+      "images.image_1": [
+        "20",
+        3
+      ],
+      "images.image_2": [
+        "20",
+        4
+      ],
+      "images.image_3": [
+        "20",
+        5
+      ],
+      "images.image_4": [
+        "20",
+        6
+      ],
+      "images.image_5": [
+        "20",
+        7
+      ],
+      "vae": [
+        "100:3",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImage21",
+    "_meta": {
+      "title": "原生 Qwen 2.1 多参考编码",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:8": {
+    "inputs": {
+      "device": "auto",
+      "dtype": "default",
+      "model": [
+        "100:1",
+        0
+      ]
+    },
+    "class_type": "QwenImage21Cache",
+    "_meta": {
+      "title": "QwenImage21Cache",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:9": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:10": {
+    "inputs": {
+      "sigmas": "1, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0"
+    },
+    "class_type": "ManualSigmas",
+    "_meta": {
+      "title": "ManualSigmas",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:11": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": 2026111301,
+      "cfg": 1,
+      "model": [
+        "100:8",
+        0
+      ],
+      "positive": [
+        "100:7",
+        0
+      ],
+      "negative": [
+        "100:7",
+        1
+      ],
+      "sampler": [
+        "100:9",
+        0
+      ],
+      "sigmas": [
+        "100:10",
+        0
+      ],
+      "latent_image": [
+        "100:22",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "Turbo · Euler · CFG1 · 8步",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:12": {
+    "inputs": {
+      "samples": [
+        "100:11",
+        0
+      ],
+      "vae": [
+        "100:3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode",
+      "cnr_id": "comfy-core",
+      "ver": "0.45.3"
+    }
+  },
+  "100:22": {
+    "inputs": {
+      "latent": [
+        "100:7",
+        2
+      ],
+      "width": [
+        "20",
+        1
+      ],
+      "height": [
+        "20",
+        2
+      ]
+    },
+    "class_type": "SkyHowlSheetCanvasV4",
+    "_meta": {
+      "title": "Sheet宽高 → 64通道画布"
+    }
+  },
+  "100:40": {
+    "class_type": "SkyHowlSheetCompose",
+    "inputs": {
+      "images": [
+        "100:12",
+        0
+      ],
+      "sheet_spec": [
+        "20",
+        8
+      ],
+      "draw_frames": false
+    },
+    "_meta": {
+      "title": "逐视图裁切居中 · 固定拼版"
+    }
+  }
+}
