@@ -1,0 +1,8 @@
+[project]
+name = "comfyui-skyhowl-sheet"
+version = "0.1.0"
+description = "Character Sheet panel and deterministic Qwen2.1 canvas; one custom node package"
+requires-python = ">=3.10"
+dependencies = ["numpy", "Pillow"]
+[tool.comfy]
+DisplayName = "SkyHowl Character Sheet"
