@@ -1,0 +1,92 @@
+{
+  "convention": "screen-facing: left points LEFT, right points RIGHT",
+  "file": "skyhowl-original-atlas.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "rects": {
+    "face_front": [
+      78,
+      37,
+      154,
+      207
+    ],
+    "face_left": [
+      692,
+      37,
+      170,
+      207
+    ],
+    "face_right": [
+      389,
+      37,
+      171,
+      207
+    ],
+    "face_3q_left": [
+      83,
+      349,
+      166,
+      207
+    ],
+    "face_3q_right": [
+      1000,
+      37,
+      180,
+      207
+    ],
+    "face_back": [
+      393,
+      348,
+      154,
+      207
+    ],
+    "body_front": [
+      731,
+      329,
+      107,
+      277
+    ],
+    "body_left": [
+      1076,
+      330,
+      48,
+      275
+    ],
+    "body_back": [
+      103,
+      644,
+      111,
+      277
+    ],
+    "clothing_front": [
+      405,
+      649,
+      130,
+      268
+    ],
+    "clothing_back": [
+      719,
+      650,
+      130,
+      267
+    ],
+    "hands": [
+      979,
+      695,
+      237,
+      178
+    ],
+    "feet": [
+      31,
+      1009,
+      253,
+      189
+    ]
+  },
+  "mirrored_views": [
+    "body_left"
+  ],
+  "tool": "built-in imagegen; no upstream bitmap input"
+}
